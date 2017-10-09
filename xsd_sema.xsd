@@ -1,0 +1,94 @@
+<?xml.version = "1.0"?>
+<xsd:schema 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="neki link koji ne postoji"
+	xmlns="neki link koji ne postoji"
+	>
+	<xsd:element name="Uplatnice">
+		<xsd:complexType>
+			<xsd:sequence minOccurs = "1" maxOccurs = "unbounded">
+				<xsd:element name="Uplatnica">
+					<xsd:complexType>
+						<xsd:sequence minOccurs="1" maxOccurs="1">
+							<xsd:element name="Uplatilac" type="xsd:string"/>
+							<xsd:element name="SvrhaPlacanja" type="xsd:string"/>
+							<xsd:element name="Primalac" type="xsd:string"/>
+							<xsd:element name="Iznos">
+								<xsd:complexType>
+									<xsd:sequence minOccurs="1" maxOccurs="1">
+										<xsd:element name="Valuta">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:minLength value="3"/>
+													<xsd:maxLength value="3"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="Sifra">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:integer">
+													<xsd:pattern value="\d{3}"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="Iznos">
+											<xsd:simpleType>
+												<xsd:restriction  base="xsd:decimal">
+													<xsd:minInclusive value="0"/>
+													<xsd:fractionDigits value="2"/>
+													<xsd:pattern value="\d+\.\d{2}"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="RacunUplatioca">
+								<xsd:complexType>
+									<xsd:sequence minOccurs="1" maxOccurs="1">
+										<xsd:element name="Model">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:positiveInteger">
+													<xsd:pattern value="\d{2}"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="BrojRacuna">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:pattern value="\d{3}-\d{1,13}-\d{2}"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="PozivniBroj" type="xsd:string"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="RacunPrimaoca">
+								<xsd:complexType>
+									<xsd:sequence minOccurs="1" maxOccurs="1">
+										<xsd:element name="Model">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:positiveInteger">
+													<xsd:pattern value="\d{2}"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="BrojRacuna">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:pattern value="\d{3}-\d{1,13}-\d{2}"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="PozivniBroj" type="xsd:string"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
