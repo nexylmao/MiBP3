@@ -1,0 +1,47 @@
+<?xml.version = "1.0"?>
+<Uplatnice
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="randomlink xsd_sema.xsd"
+	xmlns="randomlink"
+	>
+    <Uplatnica>
+        <Uplatilac> Fakultet Tehnickih Nauka Trg Dositeja Obradovica 6 21000 Novi Sad</Uplatilac>
+        <SvrhaPlacanja> Uplata po fakture br. 16 </SvrhaPlacanja>
+        <Primalac> TELEKOM SRBIJA FIKSNA TELEFONIJA NOVI SAD Sutjeska 2 21000 Novi Sad</Primalac>
+        <Iznos>
+            <Valuta>RSD</Valuta>
+            <Sifra>153</Sifra>
+            <Iznos>8000.00</Iznos>
+        </Iznos>
+        <RacunUplatioca>
+            <Model>97</Model>
+            <BrojRacuna>840-1710660-30</BrojRacuna>
+            <PozivniBroj>123-456</PozivniBroj>
+        </RacunUplatioca>
+        <RacunPrimaoca>
+            <Model>97</Model>
+            <BrojRacuna>380-3569852365147-42</BrojRacuna>
+            <PozivniBroj>12345-67</PozivniBroj>
+        </RacunPrimaoca>
+    </Uplatnica>
+	<Uplatnica>
+        <Uplatilac> Nenad Vuletic\n Janka Cmelika 66\n 21000 Novi Sad</Uplatilac>
+        <SvrhaPlacanja> Usluge </SvrhaPlacanja>
+        <Primalac> SBB d.o.o \n Bulevar Zorana Djindjica 8a \n 11070 Beograd</Primalac>
+        <Iznos>
+            <Valuta>RSD</Valuta>
+            <Sifra>189</Sifra>
+            <Iznos>3300.00</Iznos>
+        </Iznos>
+        <RacunUplatioca>
+            <Model>97</Model>
+            <BrojRacuna>420-1337-21</BrojRacuna>
+            <PozivniBroj>0-1</PozivniBroj>
+        </RacunUplatioca>
+        <RacunPrimaoca>
+            <Model>97</Model>
+            <BrojRacuna>170-1412-42</BrojRacuna>
+            <PozivniBroj>111111111201708</PozivniBroj>
+        </RacunPrimaoca>
+    </Uplatnica>
+</Uplatnice>
