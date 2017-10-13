@@ -20,8 +20,14 @@
 										<xsd:element name="Valuta">
 											<xsd:simpleType>
 												<xsd:restriction base="xsd:string">
-													<xsd:minLength value="3"/>
-													<xsd:maxLength value="3"/>
+													<xsd:enumeration value="RSD"/>
+													<xsd:enumeration value="USD"/>
+													<xsd:enumeration value="EUR"/>
+													<xsd:enumeration value="CAD"/>
+													<xsd:enumeration value="AUD"/>
+													<xsd:enumeration value="GBP"/>
+													<xsd:enumeration value="CHF"/>
+													<xsd:enumeration value="HRK"/>
 												</xsd:restriction>
 											</xsd:simpleType>
 										</xsd:element>
