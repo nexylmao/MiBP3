@@ -50,45 +50,31 @@
 									</xsd:sequence>
 								</xsd:complexType>
 							</xsd:element>
-							<xsd:element name="RacunUplatioca">
-								<xsd:complexType>
-									<xsd:all>
-										<xsd:element ref="PodaciORacunu"/>
-									</xsd:all>
-								</xsd:complexType>
-							</xsd:element>
-							<xsd:element name="RacunPrimaoca">
-								<xsd:complexType>
-									<xsd:all>
-										<xsd:element ref="PodaciORacunu"/>
-									</xsd:all>
-								</xsd:complexType>
-							</xsd:element>
+							<xsd:element name="RacunUplatioca" type="PodaciORacunu"/>
+							<xsd:element name="RacunPrimaoca" type="PodaciORacunu"/>
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
-	<xsd:element name="PodaciORacunu">
-		<xsd:complexType>
-			<xsd:sequence minOccurs="1" maxOccurs="1">
-				<xsd:element name="Model">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:positiveInteger">
-							<xsd:pattern value="\d{2}"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:element>
-				<xsd:element name="BrojRacuna">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:pattern value="\d{3}-\d{1,13}-\d{2}"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:element>
-				<xsd:element name="PozivniBroj" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
+	<xsd:complexType name="PodaciORacunu">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="Model">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:positiveInteger">
+						<xsd:pattern value="\d{2}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="BrojRacuna">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="\d{3}-\d{1,13}-\d{2}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PozivniBroj" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
 </xsd:schema>
