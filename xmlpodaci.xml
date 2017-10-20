@@ -14,14 +14,18 @@
             <Iznos>8000.00</Iznos>
         </Iznos>
         <RacunUplatioca>
-            <Model>97</Model>
-            <BrojRacuna>840-1710660-30</BrojRacuna>
-            <PozivniBroj>123-456</PozivniBroj>
+			<PodaciORacunu>
+				<Model>97</Model>
+				<BrojRacuna>840-1710660-30</BrojRacuna>
+				<PozivniBroj>123-456</PozivniBroj>
+			</PodaciORacunu>
         </RacunUplatioca>
         <RacunPrimaoca>
-            <Model>97</Model>
-            <BrojRacuna>380-3569852365147-42</BrojRacuna>
-            <PozivniBroj>12345-67</PozivniBroj>
+			<PodaciORacunu>
+				<Model>97</Model>
+				<BrojRacuna>380-3569852365147-42</BrojRacuna>
+				<PozivniBroj>12345-67</PozivniBroj>
+			</PodaciORacunu>
         </RacunPrimaoca>
     </Uplatnica>
 	<Uplatnica>
@@ -34,14 +38,18 @@
             <Iznos>3300.00</Iznos>
         </Iznos>
         <RacunUplatioca>
-            <Model>97</Model>
-            <BrojRacuna>420-1337-21</BrojRacuna>
-            <PozivniBroj>0-1</PozivniBroj>
+			<PodaciORacunu>
+				<Model>97</Model>
+				<BrojRacuna>420-1337-21</BrojRacuna>
+				<PozivniBroj>0-1</PozivniBroj>
+			</PodaciORacunu>
         </RacunUplatioca>
         <RacunPrimaoca>
-            <Model>97</Model>
-            <BrojRacuna>170-1412-42</BrojRacuna>
-            <PozivniBroj>111111111201708</PozivniBroj>
+			<PodaciORacunu>
+				<Model>97</Model>
+				<BrojRacuna>170-1412-42</BrojRacuna>
+				<PozivniBroj>111111111201708</PozivniBroj>
+			</PodaciORacunu>
         </RacunPrimaoca>
     </Uplatnica>
 </Uplatnice>
