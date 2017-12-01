@@ -1,0 +1,20 @@
+{
+  "name": "nood_start",
+  "version": "0.0.1",
+  "description": "Moj prvi nodejs projekat - Backend code za MiBP",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/nexylmao/MiBP3/"
+  },
+  "keywords": [
+    "ne",
+    "smaraj"
+  ],
+  "author": "Vuletic Nenad",
+  "license": "MIT"
+}
