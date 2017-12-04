@@ -16,5 +16,10 @@
     "smaraj"
   ],
   "author": "Vuletic Nenad",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "4.6.8"
+  }
 }
