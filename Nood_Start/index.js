@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017');
+mongoose.connect('mongodb://localhost:27017/profesorDB');
 var express = require('express');
 var app = express();
 var bodyparser = require('body-parser');
@@ -14,12 +14,20 @@ app.use(bodyparser.json());
 var ruter = express.Router();
 ruter
     .get('/:id', function(req, res, next) {
-    Profesori.findOne({
-            "_id": req.params.id
-    }).exec(function(err, entry) {
-        if(err) next(err);
-        res.json(entry);
-    });
+        Profesori.findOne({
+                "_id": req.params.id
+        }).exec(function(err, entry) {
+            if(err) next(err);
+            res.json(entry);
+        });
+    })
+    .get('/:id/komentari', function(req, res, next) {
+        Profesori.findOne({
+                "_id": req.params.id
+        },{"_id":0,"komentari":1}).exec(function(err, entry) {
+            if(err) next(err);
+            res.json(entry);
+        });
     })
     .get('/', function(req, res) {
         Profesori.find({}, function(err, data, next){
@@ -40,12 +48,40 @@ ruter
             res.json(Profesori);
         });
     })
+    .put('/:id/komentar', function(req, res, next)
+    {
+        Profesori.update(req.params.id, {$push: {komentari: req.body}}, function (err, x) {
+            if(err) next(err);
+            res.send(x);
+        });
+    })
+    .put('/:id/komentar/:idkomentar/like', function(req, res, next){
+        var prof = {_id : req.params.id, komentari: {$elemMatch: {_id:req.params.idkomentar}}};
+        Profesori.update(prof, {$inc: {"komentari.$.likes": +1}}, function (err, x){
+            if(err) next(err);
+            res.send(x);
+        });
+    })
+    .put('/:id/komentar/:idkomentar/dislike', function(req, res, next){
+        var prof = {_id : req.params.id, komentari: {$elemMatch: {_id:req.params.idkomentar}}};
+        Profesori.update(prof, {$inc: {"komentari.$.dislikes": +1}}, function (err, x){
+            if(err) next(err);
+            res.send(x);
+        });
+    })
     .delete('/:id', function(req, res, next){
         Profesori.findOneAndRemove({
             "_id": req.params.id
-        }, function(err, movie, successIndicator) {
+        }, function(err, successIndicator) {
             if(err) next(err);
             res.json(successIndicator);
+        });
+    })
+    .delete('/:id/komentar/:idkomentar', function (req, res, next) {
+        var prof = {_id : req.params.id, komentari: {$elemMatch: {_id:req.params.idkomentar}}};
+        Profesori.update(prof, {$pull: {komentari: {_id:req.params.idkomentar}}}, function(err, x){
+            if(err) next(err);
+            res.send(x);
         });
     });
 
@@ -53,7 +89,7 @@ app.use('/API/Profesori', ruter);
 
 app.use(function(err, req, res, next){
     var msg = err.message;
-    var error = err.error || err;r
+    var error = err.error || err;
     var status = err.status || 500;
 
     res.status(status).json({
