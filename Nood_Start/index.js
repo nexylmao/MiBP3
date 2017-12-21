@@ -51,8 +51,24 @@ ruter
     .put('/:id/komentar', function(req, res, next)
     {
         Profesori.update(req.params.id, {$push: {komentari: req.body}}, function (err, x) {
-            if(err) next(err);
-            res.send(x);
+            if(err) return next(err);
+
+            Profesori.find({_id:req.params.id},'komentari', (err,docs) => {
+                if(err) return next(err);
+                var sumocena = 0;
+                const ocene = docs[0].komentari;
+                for(var i = 0; i < ocene.length; i++)
+                {
+                    sumocena += ocene[i].ocena;
+                }
+
+                sumocena /= ocene.length;
+
+                Profesori.update({_id:req.params.id},{$set : {srednjaOcena:sumocena}},err => {
+                    if(err) return next(err);
+                    res.send(x);
+                });
+            });
         });
     })
     .put('/:id/komentar/:idkomentar/like', function(req, res, next){
@@ -81,6 +97,24 @@ ruter
         var prof = {_id : req.params.id, komentari: {$elemMatch: {_id:req.params.idkomentar}}};
         Profesori.update(prof, {$pull: {komentari: {_id:req.params.idkomentar}}}, function(err, x){
             if(err) next(err);
+
+            Profesori.find({_id:req.params.id},'komentari', (err,docs) => {
+                if(err) return next(err);
+                var sumocena = 0;
+                const ocene = docs[0].komentari;
+                for(var i = 0; i < ocene.length; i++)
+                {
+                    sumocena += ocene[i].ocena;
+                }
+
+                sumocena /= ocene.length;
+
+                Profesori.update({_id:req.params.id},{$set : {srednjaOcena:sumocena}},err => {
+                    if(err) return next(err);
+                    res.send(x);
+                });
+            });
+
             res.send(x);
         });
     });
