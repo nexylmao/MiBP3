@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Ovo je naslov</title>
+	</head>
+	<body>
+		<figure>
+			<img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px;">
+			<figcaption>Spectacular Mountain</figcaption>
+		</figure>
+	
+		<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+		</canvas>
+		
+		<script>
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d");
+
+			// Create gradient
+			var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+			grd.addColorStop(0,"red");
+			grd.addColorStop(1,"white");
+
+			// Fill with gradient
+			ctx.fillStyle = grd;
+			ctx.fillRect(10,10,150,80);
+		</script>
+		
+		<svg width="100" height="100">
+		  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+		</svg>
+		
+		<div id="map" style="width:400px;height:400px">My map will go here</div>
+		
+		<script>
+			function myMap() {
+				var mapOptions = {
+					center: new google.maps.LatLng(45.261463, 19.810880),
+					zoom: 18,
+					mapTypeId: google.maps.MapTypeId.HYBRID
+				}
+			var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+			}
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+		
+	</body>
+</html>
