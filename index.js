@@ -3,7 +3,7 @@ mongoose.connect('mongodb://user:user@ds243805.mlab.com:43805/oceni-profesor');
 var express = require('express');
 var app = express();
 var bodyparser = require('body-parser');
-const port = 3000;
+const port = process.env.PORT || 3000;
 var Profesori = require('./schema/Profesor');
 
 app.use(bodyparser.urlencoded({
