@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/profesorDB');
+mongoose.connect('mongodb://user:user@ds243805.mlab.com:43805/oceni-profesor');
 var express = require('express');
 var app = express();
 var bodyparser = require('body-parser');
