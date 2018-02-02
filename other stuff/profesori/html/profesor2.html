@@ -1,6 +1,133 @@
 <!DOCTYPE html>
 <html>
-	<img src="../images/vrbaski.jpeg" width="10%"/>
-	<table border="30" cellpadding="4" cellspacing="4">
-	</table>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Dunja Vrbaski</title>
+	</head>
+	<body>
+			<div class="Head">
+				<h2>
+					<br/> Profesor
+				</h2>
+				<div class="home button">
+						<input id="comment" type="button" name="home" value="Go Home" onclick="window.location.href='../mainpage.html'"/>
+				</div>
+			</div>
+			<div class="Profil">
+				<h3>
+					Asistent-master Dunja Vrbaski
+				</h3>
+				<table border="0" cellpading="4" cellspacing="4">
+					<tr>
+						<th><img src="../images/vrbaski.jpeg" width="50%"/></th>
+						<th>
+							<table border="1" cellpading="1" cellspacing="1">
+								<tr>
+									<th>E-mail</th>
+									<th>dunja.vrbaski@uns.ac.rs</th>
+								</tr>
+								<tr>
+									<th>Akademsko zvanje</th>
+									<th>Asistent master</th>
+								</tr>
+							</table>
+						</th>
+					</tr>
+				</table>
+				<br/>
+			</div>
+			<br/>
+			<div class="Unesite komentar">
+				<form>
+					Komentar:<br>
+					<input type="text" name="comment" value="*text komentara*"><br>
+					<table border="0" cellspacing="10" cellpading="1">
+						<tr>
+							<th>1</th>
+							<th>2</th>
+							<th>3</th>
+							<th>4</th>
+							<th>5</th>
+						</tr>
+						<tr>
+							<div class="star-rating">
+								<th>
+									<input id="star-5" type="radio" name="rating" value="star-5">
+									<label for="star-5" title="5 stars">
+											<i class="active fa fa-star" aria-hidden="true"></i>
+									</label>
+								</th>
+								<th>
+									<input id="star-4" type="radio" name="rating" value="star-4">
+									<label for="star-4" title="4 stars">
+											<i class="active fa fa-star" aria-hidden="true"></i>
+									</label>
+								</th>
+								<th>
+									<input id="star-3" type="radio" name="rating" value="star-3">
+									<label for="star-3" title="3 stars">
+											<i class="active fa fa-star" aria-hidden="true"></i>
+									</label>
+								</th>
+								<th>
+									<input id="star-2" type="radio" name="rating" value="star-2">
+									<label for="star-2" title="2 stars">
+											<i class="active fa fa-star" aria-hidden="true"></i>
+									</label>
+								</th>
+								<th>
+									<input id="star-1" type="radio" name="rating" value="star-1">
+									<label for="star-1" title="1 star">
+											<i class="active fa fa-star" aria-hidden="true"></i>
+									</label>
+								</th>
+								</div>
+						</tr>
+					</table>
+					<input type="submit" value="Submit">
+				</form> 
+			</div>
+	
+			<br/>
+	
+			<div class="Komentari">
+				<br/>
+				<br/>
+				<ul style="list-style-type:none">
+					<li>
+						<br/>
+						<p>*text komentara*</p>
+						<div class="rating">
+							<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+						</div>
+						<div class="likes/dislikes">
+							0 : ☝ 0 : ☟
+						</div>
+						<br/>
+					</li>
+					<li>
+						<br/>
+						<p>*text komentara*</p>
+						<div class="rating">
+							<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+						</div>
+						<div class="likes/dislikes">
+							0 : ☝ 0 : ☟
+						</div>
+						<br/>
+					</li>
+					<li>
+						<br/>
+						<p>*text komentara*</p>
+						<div class="rating">
+							<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+						</div>
+						<div class="likes/dislikes">
+							0 : ☝ 0 : ☟
+						</div>
+						<br/>
+					</li>
+				</ul> 
+			</div>
+		</body>
 </html>
