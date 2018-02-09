@@ -1,0 +1,37 @@
+html, body
+{
+    overflow: hidden;
+    margin:  0;
+}
+
+#first
+{
+    height: 70vh;
+    width: 60%;
+    background-color: gray;
+    float: left;
+}
+
+#second 
+{
+    height: 70vh;
+    width: 40%;
+    background-color: black;
+    float: right;
+}
+
+#third
+{
+    height: 30vh;
+    width: 80%;
+    background-color: red;
+    float: left;
+}
+
+#fourth 
+{
+    height: 30vh;
+    width: 20%;
+    background-color: gray;
+    float: right;
+}
